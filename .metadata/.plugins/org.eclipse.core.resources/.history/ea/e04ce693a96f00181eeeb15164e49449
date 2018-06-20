@@ -1,0 +1,5 @@
+package com.ashutosh.socialhub.domain;
+
+public class Blog {
+
+}

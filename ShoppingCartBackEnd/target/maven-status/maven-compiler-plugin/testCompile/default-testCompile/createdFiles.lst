@@ -1,0 +1,5 @@
+com\ashutosh\shoppingcart\CartDAOTest.class
+com\ashutosh\shoppingcart\CategoryDAOTestCase.class
+com\ashutosh\shoppingcart\QueryTest.class
+com\ashutosh\shoppingcart\UserDAOTestCase.class
+com\ashutosh\shoppingcart\ProductDAOTestCase.class

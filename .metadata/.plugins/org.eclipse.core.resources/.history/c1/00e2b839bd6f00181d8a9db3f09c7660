@@ -1,0 +1,74 @@
+package com.ashutosh.socialhub.domain;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+@Table
+public class Blog {
+	@Id
+	private int blogId;
+	private String blogname;
+	private String bolgContent;
+	private Date createDate;
+	private String loginName;
+	private String status;
+	private int likes;
+	private int dislikes;
+	public int getBlogId() {
+		return blogId;
+	}
+	public void setBlogId(int blogId) {
+		this.blogId = blogId;
+	}
+	public String getBolgName() {
+		return blogname;
+	}
+	public void setBolgName(String blogname) {
+		this.blogname = blogname;
+	}
+	public String getBolgContent() {
+		return bolgContent;
+	}
+	public void setBolgContent(String bolgContent) {
+		this.bolgContent = bolgContent;
+	}
+	public Date getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+	public String getLoginName() {
+		return loginName;
+	}
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+	public int getDislikes() {
+		return dislikes;
+	}
+	public void setDislikes(int dislikes) {
+		this.dislikes = dislikes;
+	}
+	
+
+}

@@ -1,0 +1,12 @@
+package com.ashutosh.socialhub.dao;
+
+import com.ashutosh.socialhub.domain.User;
+
+public interface UserDAO {
+	
+	public boolean registerUser(User user);
+	public boolean updatUser(User user);
+	public User getUser(String loginname);
+	public User checkUser(User user);//available or not
+	
+}

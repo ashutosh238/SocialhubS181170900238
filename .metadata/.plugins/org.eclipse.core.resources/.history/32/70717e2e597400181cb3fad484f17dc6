@@ -1,0 +1,17 @@
+package com.ashutosh.socialhub.restrcontroller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ProductRestController 
+	{ 
+		@GetMapping("/demo")
+		public ResponseEntity<String> showDemo()
+		{
+			return new ResponseEntity<String>("Hello Demo", HttpStatus.OK);
+		}
+
+	}
