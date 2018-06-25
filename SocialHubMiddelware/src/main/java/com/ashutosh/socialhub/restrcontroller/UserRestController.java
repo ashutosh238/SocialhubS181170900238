@@ -1,5 +1,7 @@
 package com.ashutosh.socialhub.restrcontroller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,8 +31,9 @@ public class UserRestController
 				return new ResponseEntity<String>("Faliure",HttpStatus.NOT_FOUND);
 			}
 		}
-		/*@PostMapping("/checkLogin")
-		public ResponseEntity<UserDetail> checkLogin(@RequestBody UserDetail userDetail)
+		
+		@PostMapping("/checkLogin")
+		public ResponseEntity<UserDetail> checkLogin(@RequestBody UserDetail userDetail,HttpSession session)
 		{
 			UserDetail tempUserDetail=userDAO.getUser(userDetail.getLoginname());
 			
@@ -41,8 +44,12 @@ public class UserRestController
 				return new ResponseEntity<UserDetail>(tempUserDetail,HttpStatus.OK);
 				
 			}
+			else
+			{
+				return new ResponseEntity<UserDetail>(tempUserDetail,HttpStatus.NOT_FOUND);
+			}
 			
-		}*/
+		}
 		
 		
 	}

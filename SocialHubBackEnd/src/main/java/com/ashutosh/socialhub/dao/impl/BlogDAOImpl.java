@@ -77,5 +77,48 @@ public class BlogDAOImpl implements BlogDAO {
 		}
 		
 	}
+	public List<Blog> approvedBlogsList() {
+		return sessionFactory.getCurrentSession().createQuery("from Blog where status='A'").list();
+	}
+
+	public boolean approveBlog(int blogid) {
+		try {
+			Blog blog = this.get(blogid);
+			blog.setStatus("A");
+			sessionFactory.getCurrentSession().update(blog);
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public boolean rejectBlog(int blogid) {
+		try {
+			Blog blog = get(blogid);
+			blog.setStatus("R");
+			sessionFactory.getCurrentSession().update(blog);
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public boolean incLikes(int blogid) {
+		try {
+			Blog blog = get(blogid);
+			blog.setLikes(blog.getLikes() + 1);
+			sessionFactory.getCurrentSession().update(blog);
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 
 }

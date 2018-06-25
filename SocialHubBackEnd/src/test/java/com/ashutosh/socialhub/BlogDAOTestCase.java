@@ -39,7 +39,7 @@ private static Blog blog;
 }
 	
 	
-	 
+	 @Ignore
 	@Test
 	public void addBlogTestCase()
 	{	//blog.setBlogId(0);
@@ -55,14 +55,14 @@ private static Blog blog;
 		
 	}
 
-	 
+	 @Ignore	 
 @Test
 public void deleteBlogTest()
 {
 	Blog blog=blogDAO.get(5);
 	assertTrue("Problem in Deleting:",blogDAO.delete(blog));
 }
-	 
+	 @Ignore
 	@Test
 	public void UpdateBlogTest()
 	{
@@ -71,7 +71,7 @@ public void deleteBlogTest()
 		blog.setBolgContent("Spring handels the infrastructure due to which develoger imphesises on buiseness logic");
 		assertTrue("Problem in Updateing:",blogDAO.update(blog));
 	}
-	
+	 @Ignore
 	@Test
 	public void getAllBlogs()
 	{
@@ -79,5 +79,32 @@ public void deleteBlogTest()
 		
 		Assert.assertEquals(5, size);
 	}
-
+	 @Ignore
+	@Test
+	public void ApproveBlogTest()
+	{
+		
+		assertTrue("Problem in Approving:",blogDAO.approveBlog(6));
+	}
+	 
+	 @Test
+		public void incLikesTest()
+		{
+		 assertTrue("Problem in increamentlikes:",blogDAO.incLikes(6));
+		}
+	 @Test
+		public void RejectBlogTest()
+		{
+			
+			assertTrue("Problem in Rejrcting:",blogDAO.rejectBlog(6));
+		}
+	 
+	 @Test
+		public void getAllApprovedBlogs()
+		{
+			int size = blogDAO.approvedBlogsList().size();
+			
+			Assert.assertEquals(2, size);
+		}
+	 
 }

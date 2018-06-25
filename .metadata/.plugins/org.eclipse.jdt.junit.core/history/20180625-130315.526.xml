@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BlogDAOTestCase" project="SocialHubBackEnd" tests="7" started="7" failures="0" errors="0" ignored="5">
+  <testsuite name="com.ashutosh.socialhub.BlogDAOTestCase" time="0.519">
+    <testcase name="addBlogTestCase" classname="com.ashutosh.socialhub.BlogDAOTestCase" time="0.0" ignored="true"/>
+    <testcase name="UpdateBlogTest" classname="com.ashutosh.socialhub.BlogDAOTestCase" time="0.001" ignored="true"/>
+    <testcase name="RejectBlogTest" classname="com.ashutosh.socialhub.BlogDAOTestCase" time="0.434"/>
+    <testcase name="getAllBlogs" classname="com.ashutosh.socialhub.BlogDAOTestCase" time="0.0" ignored="true"/>
+    <testcase name="ApproveBlogTest" classname="com.ashutosh.socialhub.BlogDAOTestCase" time="0.0" ignored="true"/>
+    <testcase name="incLikesTest" classname="com.ashutosh.socialhub.BlogDAOTestCase" time="0.082"/>
+    <testcase name="deleteBlogTest" classname="com.ashutosh.socialhub.BlogDAOTestCase" time="0.001" ignored="true"/>
+  </testsuite>
+</testrun>
