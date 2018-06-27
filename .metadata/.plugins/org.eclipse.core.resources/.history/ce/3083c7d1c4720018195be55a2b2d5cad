@@ -1,5 +1,0 @@
-package com.ashutosh.socialhub.dao;
-
-public interface ForumCommentDAO {
-
-}

@@ -44,6 +44,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Ashutosh\eclipse-workspace\SocialHubMiddelware"/>
+			<item value="C:\Users\Ashutosh\eclipse-workspace\SocialHubMiddelware\src\main\java\com\ashutosh\socialhub\restrcontroller\UserRestController.java"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -56,21 +58,17 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.ashutosh.socialhubmiddelware"/>
-			<item value="com.ashutosh.SocialHubMiddelware"/>
-			<item value="com.ashutosh.socialhub"/>
-			<item value="com.ashutosh.shoppingcart"/>
+			<item value="com.ashutosh.kl"/>
+			<item value="com.ashutosh.socialhubfrontend"/>
+			<item value="SocialHub"/>
 		</list>
 		<list key="groupId">
 			<item value="com.ashutosh"/>
+			<item value="SocialHub"/>
 		</list>
 		<list key="artifactId">
-			<item value="SocialHubMiddelware"/>
-			<item value="SocialHubBAckEnd"/>
-			<item value="SocialHubBackEnd"/>
-			<item value="SocialHub"/>
-			<item value="ShoppingCartFrontEnd"/>
-			<item value="ShoppingCartBackEnd"/>
+			<item value="kl"/>
+			<item value="SocialHubFrontEnd"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

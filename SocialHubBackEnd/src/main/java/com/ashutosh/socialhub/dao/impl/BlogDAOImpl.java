@@ -27,8 +27,8 @@ public class BlogDAOImpl implements BlogDAO {
 			
 			try {
 				 
-				blog.setCreateDate(new Date(System.currentTimeMillis()));
-				sessionFactory.getCurrentSession().saveOrUpdate(blog);
+				blog.setCreatedate(new Date(System.currentTimeMillis()));
+				sessionFactory.getCurrentSession().save(blog);
 			} catch (Exception e) {
 				// print the complete exception stack trace
 				e.printStackTrace();

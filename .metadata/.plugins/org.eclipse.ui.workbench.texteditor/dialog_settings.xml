@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="blogName" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="blogname"/>
+			<item value="User"/>
 			<item value="WEBRESOLVER"/>
 			<item value="friendlogonname"/>
 			<item value="Forum"/>
@@ -21,10 +23,10 @@
 			<item value="forumcommentDAO"/>
 			<item value="discussiontxt"/>
 			<item value="commemtid"/>
-			<item value="jobdetail"/>
-			<item value="JobDetail"/>
 		</list>
 		<list key="replacehistory">
+			<item value="blogName"/>
+			<item value="user"/>
 			<item value="friendloginname"/>
 			<item value="Friend"/>
 			<item value="friend"/>
@@ -38,8 +40,6 @@
 			<item value="ForumComment"/>
 			<item value="forumcommentDAO"/>
 			<item value="ForumCommentDAO"/>
-			<item value="createDate"/>
-			<item value="Forum"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

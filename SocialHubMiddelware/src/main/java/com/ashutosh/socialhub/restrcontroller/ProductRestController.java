@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ashutosh.socialhub.dao.BlogDAO;
 import com.ashutosh.socialhub.domain.Blog;
+import com.ashutosh.socialhub.domain.UserDetail;
 
 @RestController
 public class ProductRestController 
 	{ 
 		@Autowired
 		BlogDAO blogDAO;
+		
 	
 		@GetMapping("/listBlogs")
 		public ResponseEntity<List<Blog>> listBlogs()
@@ -36,23 +38,24 @@ public class ProductRestController
 		
 		}
 		
-		@PostMapping(value="/addBlog")
-		public ResponseEntity<String> insertBlog(@RequestBody Blog blog)
+		@PostMapping("/addBlog")
+		public ResponseEntity<Blog> addBlog(@RequestBody Blog blog)
 		{
-			blog.setDislikes(0);
-			blog.setLikes(0);
 			blog.setStatus("NA");
-			if(blogDAO.save(blog)) 
+			if(blogDAO.save(blog))
 			{
-				return new ResponseEntity<String>("Success", HttpStatus.OK);
+				return new ResponseEntity<Blog>(blog,HttpStatus.OK);
 			}
 			else
 			{
-				return new ResponseEntity<String>("Failure",HttpStatus.NOT_FOUND);
-				
+				return new ResponseEntity<Blog>(blog,HttpStatus.NOT_FOUND);
 			}
-			
 		}
+		
+		
+		
+		
+		
 		@GetMapping("/getBlog/{blogid}")
 		public ResponseEntity<Blog> getBlog(@PathVariable("blogid")int blogid)
 		{
@@ -93,7 +96,7 @@ public class ProductRestController
 			{
 				Blog blog = blogDAO.get(blogid);
 				blog.setStatus("Could not Approved, Error Occurred");
-				return new ResponseEntity<Blog>(blog, HttpStatus.INTERNAL_SERVER_ERROR);
+				return new ResponseEntity<Blog>(blog, HttpStatus.NOT_FOUND);
 			}
 		}
 		
@@ -110,7 +113,7 @@ public class ProductRestController
 			{
 				Blog blog = blogDAO.get(blogid);
 				blog.setStatus("Could not performed operation successfully");
-				return new ResponseEntity<Blog>(blog, HttpStatus.INTERNAL_SERVER_ERROR);
+				return new ResponseEntity<Blog>(blog, HttpStatus.NOT_FOUND);
 			}
 		}
 		
@@ -127,7 +130,7 @@ public class ProductRestController
 			{
 				Blog blog = blogDAO.get(blogid);
 				blog.setStatus("Error Occurred");
-				return new ResponseEntity<Blog>(blog, HttpStatus.INTERNAL_SERVER_ERROR);
+				return new ResponseEntity<Blog>(blog, HttpStatus.NOT_FOUND);
 			}
 		}
 		

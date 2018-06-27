@@ -39,17 +39,16 @@ private static Blog blog;
 }
 	
 	
-	 @Ignore
+	
 	@Test
 	public void addBlogTestCase()
 	{	//blog.setBlogId(0);
-		blog.setBolgContent("Springis a framwork of frameworks");
-		blog.setBolgName("Spring");
-		blog.setDislikes(100);
-		blog.setLikes(2);
-		blog.setLoginName("Shrinivas");
+		blog.setBlogcontent("lslckcnbhryi");
+		blog.setBlogname("name");
+		blog.setDislikes(98);
+		blog.setLikes(9);
+		blog.setLoginname("karma");
 		blog.setStatus("NA");
-		
 		//boolean actual = userDAO.save(user);
 		Assert.assertEquals("Add Blog Test Case" , true  , blogDAO.save(blog));
 		
@@ -68,7 +67,7 @@ public void deleteBlogTest()
 	{
 		Blog blog=blogDAO.get(4);
 		blog.setStatus("A");
-		blog.setBolgContent("Spring handels the infrastructure due to which develoger imphesises on buiseness logic");
+		blog.setBlogcontent("Spring handels the infrastructure due to which develoger imphesises on buiseness logic");
 		assertTrue("Problem in Updateing:",blogDAO.update(blog));
 	}
 	 @Ignore
@@ -86,19 +85,20 @@ public void deleteBlogTest()
 		
 		assertTrue("Problem in Approving:",blogDAO.approveBlog(6));
 	}
-	 
+	 @Ignore
 	 @Test
 		public void incLikesTest()
 		{
 		 assertTrue("Problem in increamentlikes:",blogDAO.incLikes(6));
 		}
+	 @Ignore
 	 @Test
 		public void RejectBlogTest()
 		{
 			
 			assertTrue("Problem in Rejrcting:",blogDAO.rejectBlog(6));
 		}
-	 
+	 @Ignore
 	 @Test
 		public void getAllApprovedBlogs()
 		{
