@@ -36,9 +36,11 @@ public class UserRestController
 		public ResponseEntity<UserDetail> checkLogin(@RequestBody UserDetail userDetail,HttpSession session)
 		{
 			UserDetail tempUserDetail=userDAO.getUser(userDetail.getLoginname());
+			String a=userDetail.getPassword();
+			String b=tempUserDetail.getPassword();
 			
-			if(tempUserDetail!=null)
-				
+			if(a.equals(b))
+			
 			{
 				session.setAttribute("userDetail",tempUserDetail);
 				return new ResponseEntity<UserDetail>(tempUserDetail,HttpStatus.OK);
@@ -49,7 +51,7 @@ public class UserRestController
 				return new ResponseEntity<UserDetail>(tempUserDetail,HttpStatus.NOT_FOUND);
 			}
 			
+		
+		
 		}
-		
-		
 	}

@@ -2,6 +2,8 @@ package com.ashutosh.socialhub.restrcontroller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,14 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ashutosh.socialhub.dao.BlogDAO;
+import com.ashutosh.socialhub.dao.UserDAO;
 import com.ashutosh.socialhub.domain.Blog;
 import com.ashutosh.socialhub.domain.UserDetail;
 
 @RestController
 public class ProductRestController 
 	{ 
+	
+		@Autowired
+		UserDAO userDAO;
+		
 		@Autowired
 		BlogDAO blogDAO;
+		
 		
 	
 		@GetMapping("/listBlogs")
@@ -39,8 +47,12 @@ public class ProductRestController
 		}
 		
 		@PostMapping("/addBlog")
-		public ResponseEntity<Blog> addBlog(@RequestBody Blog blog)
+		public ResponseEntity<Blog> addBlog(@RequestBody Blog blog,HttpSession session)
 		{
+			
+			
+			String loginname = (String) session.getAttribute("loginname");
+			blog.setLoginname(loginname);
 			blog.setStatus("NA");
 			if(blogDAO.save(blog))
 			{
@@ -134,7 +146,20 @@ public class ProductRestController
 			}
 		}
 		
-
+		@GetMapping("/deleteBlog/{blogid}")
+		public ResponseEntity<String> deleteBlog(@PathVariable("blogid")int blogid)
+		{
+			Blog blog=blogDAO.get(blogid);
+			
+			if(blogDAO.delete(blog))
+			{
+				return new ResponseEntity("Success",HttpStatus.OK);
+			}
+			else
+			{
+				return new ResponseEntity("Failure",HttpStatus.NOT_FOUND);
+			}
+		}
 		
 
 	}

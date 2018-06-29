@@ -9,8 +9,10 @@ myApp.config(
 			
 				.when("/",				{templateUrl : "/index.html"})
 				.when("/login",			{templateUrl : "c_user/login.html"})
+				.when("/loggedin",		{templateUrl : "welcomepage.html"})
 				.when("/register",		{templateUrl : "c_user/register.html"})
 				.when("/addBlog",		{templateUrl : "c_blog/addBlog.html"})
+				.when("/allBlog",		{templateUrl : "c_blog/showBlog.html"})
 
 				
 				

@@ -32,10 +32,16 @@
   		</li>
   
 
-	<ul class="navbar-nav">
+	<ul class="nav navbar-nav navbar-left">
 	 <li class="nav-item" ng-show="CurrentUser==undefined">
       <a class="nav-link" href="#/login"> Login </a>
     </li>
+    
+    
+    <li class="nav-item" ng-hide="CurrentUser==undefined">
+      <a class="nav-link" style="color:wheat;" href="#"> Welcome, {{CurrentUser.username}} </a>
+    </li>
+    
     <li class="nav-item" ng-show="CurrentUser==undefined">
       <a class="nav-link" href="#/register"> Register </a>
     </li>

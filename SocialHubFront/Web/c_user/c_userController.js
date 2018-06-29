@@ -24,7 +24,7 @@ myApp.controller("c_userController", function($scope, $http, $rootScope, $locati
 	$scope.register = function()
 	{
 		console.log("register page");
-		console.log("email" + $scope.user.email);
+		console.log("email" + $scope.user.emailId);
 		console.log("password" + $scope.user.password);
 		
 		$http.post('http://localhost:8081/SocialHubMiddelware/registerUser', $scope.user)
